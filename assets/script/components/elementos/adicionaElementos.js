@@ -1,6 +1,7 @@
-import { criaLabel, criaInput, criaSelect, criaOption } from "./criaElementos.js";
+import { criaLabel, criaInput, criaSelect, criaOption } from './criaElementos.js';
+import { excluiElementos } from './excluiElementos.js';
 
-export function adicionaAtributos() {
+export function adicionaElementos() {
 
     let contador = 0;
     
@@ -30,14 +31,14 @@ export function adicionaAtributos() {
 
         Object.assign(novoInputNome, {
             type: 'text',
-            id: `form_label_${contador}`,
+            id: `form_nome_${contador}`,
             name: `nome_${contador}`,
             placeholder: 'nome (ex: pagina)'
         });
 
         Object.assign(novoInputValor, {
             type: 'number',
-            id: `form_label_${contador}`,
+            id: `form_valor_${contador}`,
             name: `valor_${contador}`,
             min: 1,
             placeholder: 'valor'
@@ -65,6 +66,8 @@ export function adicionaAtributos() {
             classList: 'button_excluir_parametro',
             value: 'Icon Lixeira'
         });
+
+        excluiElementos(novoInputExcluir, container);
 
         container.appendChild(novoLabel);
         container.appendChild(novoInputNome);
