@@ -1,0 +1,81 @@
+import { criaLabel, criaInput, criaSelect, criaOption } from "./criaElementos.js";
+
+export function adicionaAtributos() {
+
+    let contador = 0;
+    
+    document.getElementById('button_add_parametros').addEventListener('click', function() {
+        
+        contador ++;
+
+        const container = document.createElement("div");
+
+        const formulario = document.querySelector('#form');
+        const botao = document.querySelector('#button_add_parametros');
+
+        const novoLabel = criaLabel();
+        const novoInputNome = criaInput();
+        const novoInputValor = criaInput();
+
+        const novoSelect = criaSelect();
+        const novoOptionSubindo = criaOption();
+        const novoOptionDescendo = criaOption();
+
+        const novoInputExcluir = criaInput();
+
+        Object.assign(novoLabel, {
+            htmlFor:  `form_label_${contador}`,
+            textContent: 'Parâmetros customizados'
+        });
+
+        Object.assign(novoInputNome, {
+            type: 'text',
+            id: `form_label_${contador}`,
+            name: `nome_${contador}`,
+            placeholder: 'nome (ex: pagina)'
+        });
+
+        Object.assign(novoInputValor, {
+            type: 'number',
+            id: `form_label_${contador}`,
+            name: `valor_${contador}`,
+            min: 1,
+            placeholder: 'valor'
+        });
+
+        Object.assign(novoSelect, {
+            id: `form_direcao_${contador}`,
+            name: `direcao_${contador}`,
+            required: true
+        });
+
+        Object.assign(novoOptionSubindo, {
+            value: "sobe",
+            textContent: 'Subindo'
+        });
+
+        Object.assign(novoOptionDescendo, {
+            value: "desce",
+            textContent: 'Descendo'
+        });
+
+        Object.assign(novoInputExcluir, {
+            type: 'button',
+            id: `button_excluir_parametro_${contador}`,
+            classList: 'button_excluir_parametro',
+            value: 'Icon Lixeira'
+        });
+
+        container.appendChild(novoLabel);
+        container.appendChild(novoInputNome);
+        container.appendChild(novoInputValor);
+
+        novoSelect.appendChild(novoOptionSubindo);
+        novoSelect.appendChild(novoOptionDescendo);
+        container.appendChild(novoSelect)
+
+        container.appendChild(novoInputExcluir);
+
+        formulario.insertBefore(container, botao);
+    });
+}
