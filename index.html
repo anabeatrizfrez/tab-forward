@@ -31,38 +31,38 @@
 
             <form id="form">
 
-                <label for="data_atual">Pegar data atual?</label>
+                <label for="form_data_atual">Pegar data atual?</label>
                 <input type="checkbox" name="data_atual" id="form_data_atual" value="true">
 
                 <!-- QUEBRA DE LINHA --> <br>
 
-                <label for="dia">Dia</label>
+                <label for="form_dia">Dia</label>
                 <input type="number" id="form_dia" name="dia" min="1" max="31">
                 
-                <label for="mes">Mês</label>
+                <label for="form_mes">Mês</label>
                 <input type="number" id="form_mes" name="mes" min="1" max="12">
 
-                <label for="ano">Ano</label>
+                <label for="form_ano">Ano</label>
                 <input type="number" id="form_ano" name="ano" min="1500" max="2500">
 
                 <!-- QUEBRA DE LINHA --> <br>
 
-                <label for="direcao_data">Direção</label>
+                <label for="form_direcao_data">Direção</label>
                 <select id="form_direcao_data" name="direcao_data" required>
                     <option value="sobe">Subindo (próximos dias)</option>  <!--Adicionar setas subindo e descendo-->
                     <option value="desce">Descendo (dias anteriores)</option>
                 </select>
 
-                <label for="passo_data">Pular de quantos em quantos dias</label>
+                <label for="form_passo_data">Pular de quantos em quantos dias</label>
                 <input type="number" id="form_passo_data" name="passo_data" value="1" min="1">
 
 
                 <hr> <!-- QUEBRA DE LINHA --> <br>
 
-                <label for="id">ID</label>
+                <label for="form_id">ID</label>
                 <input type="number" id="form_id" name="id" >
 
-                <label for="direcao_id">Direção</label>
+                <label for="form_direcao_id">Direção</label>
                 <select id="form_direcao_id" name="direcao_id" required>
                     <option value="sobe">Subindo (próximos ids)</option>  <!--Adicionar setas subindo e descendo-->
                     <option value="desce">Descendo (ids anteriores)</option>
@@ -70,15 +70,15 @@
 
                 <!-- QUEBRA DE LINHA --> <br>
 
-                <label for="passo_id">Pular de quantos em quantos ids</label>
+                <label for="form_passo_id">Pular de quantos em quantos ids</label>
                 <input type="number" id="form_passo_id" name="passo_id" value="1" min="1">
                 
-                <label for="qtde_abas">Quantidade de abas</label>
+                <label for="form_qtde_abas">Quantidade de abas</label>
                 <input type="number" id="form_qtde_abas" name="qtde_abas" value="1" min="1" max="40" required>
                 
                 <!-- QUEBRA DE LINHA --> <br>
 
-                <button>Adicionar Parâmetro</button>
+                <button type="button" id="button_add_parametros">Adicionar Parâmetro</button>
             </form>
 
             <div class="acoes">
