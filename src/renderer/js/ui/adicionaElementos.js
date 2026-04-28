@@ -1,6 +1,6 @@
 import { criaLabel, criaInput, criaSelect, criaOption, criaDiv } from './criaElementos.js';
-import { excluiElementos } from './excluiElementos.js';
-import { estado } from '../funcoes/estado.js';
+import { estado } from '../modules/estado.js';
+import { excluiElementos } from '../utils/excluiElementos.js';
 
 export function adicionaElementos() {
     const botao = document.querySelector('#button_add_parametros');

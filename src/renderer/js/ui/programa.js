@@ -1,7 +1,7 @@
-import { pegaAtributos } from './atributos/pegaAtributos.js';
-import { promptNavegador } from './funcoes/promptNavegador.js';
-import { delay } from './funcoes/delay.js';
-import { gerarUrls } from './funcoes/gerarURLs.js';
+import { pegaAtributos } from './pegaAtributos.js';
+import { gerarUrls } from '../modules/gerarUrls.js';
+import { promptNavegador } from '../modules/promptNavegador.js';
+import { delay } from '../utils/delay.js';
 
 const botao = document.querySelector('#button_abrir_abas');
 

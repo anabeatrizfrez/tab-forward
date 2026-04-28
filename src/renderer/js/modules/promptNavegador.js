@@ -1,4 +1,4 @@
-import { identificaSO } from '../funcoes/identificaSO.js';
+import { identificaSO } from './identificaSO.js';
 const so = identificaSO();
 
 export function promptNavegador(navegador) {

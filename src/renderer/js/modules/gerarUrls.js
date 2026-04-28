@@ -1,6 +1,6 @@
-import { transformaUrl } from './transformaUrl.js';
-import { verificaDia } from './verificaDia.js';
 import { estado } from './estado.js';
+import { verificaDia } from './verificaDia.js';
+import { transformaUrl } from '../utils/transformaUrl.js';
 
 function calculaValor(base, direcao, iteracao, passo = 1) {
     (direcao === 'sobe') ? base += (iteracao * passo) : base -= (iteracao * passo);

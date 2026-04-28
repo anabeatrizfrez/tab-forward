@@ -1,5 +1,5 @@
 import { pegaAtributos } from './pegaAtributos.js';
-import { gerarUrls } from '../funcoes/gerarUrls.js';
+import { gerarUrls } from '../modules/gerarUrls.js';
 
 function exibirUrls(urls) {
     const container = document.querySelector('#resultado_urls');

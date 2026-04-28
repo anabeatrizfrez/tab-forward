@@ -1,4 +1,4 @@
-import { dataAtual } from './dataAtual.js';
+import { dataAtual } from '../utils/dataAtual.js';
 const data = dataAtual();
 
 const checkbox = document.querySelector('#form_data_atual');
