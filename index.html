@@ -43,7 +43,7 @@
                 <input type="number" id="form_mes" name="mes" min="1" max="12">
 
                 <label for="form_ano">Ano</label>
-                <input type="number" id="form_ano" name="ano" min="1500" max="2500">
+                <input type="number" id="form_ano" name="ano" min="1500" max="2200">
 
                 <!-- QUEBRA DE LINHA --> <br>
 
@@ -74,17 +74,17 @@
                 <input type="number" id="form_passo_id" name="passo_id" value="1" min="1">
                 
                 <label for="form_qtde_abas">Quantidade de abas</label>
-                <input type="number" id="form_qtde_abas" name="qtde_abas" value="1" min="1" max="40" required>
+                <input type="number" id="form_qtde_abas" name="qtde_abas" value="1" min="1" max="30" required>
                 
                 <!-- QUEBRA DE LINHA --> <br>
 
                 <button type="button" id="button_add_parametros">Adicionar Parâmetro</button>
             </form>
-
+            
             <div class="acoes">
+                <button type="reset" id="button_limpar">Limpar</button>
                 <button id="button_pre_visualizar" class="capturar">Pré-visualizar URLs</button>
                 <button id="button_abrir_abas" class="capturar">Abrir abas</button>
-                <button id="button_limpar">Limpar</button>
             </div>
 
             <label for="select_navegador">Escolha o navegador:</label> <!--Colocar que precisa estar instalado na maquina-->
@@ -94,6 +94,8 @@
                     <option value="firefox">Firefox</option>
                     <option value="opera">Opera</option>
             </select>
+
+            <div id="resultado_urls"></div>
 
         </div>
 

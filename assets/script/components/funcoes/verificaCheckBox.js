@@ -1,29 +1,30 @@
 import { dataAtual } from './dataAtual.js';
 const data = dataAtual();
 
+const checkbox = document.querySelector('#form_data_atual');
+const input_dia = document.querySelector('#form_dia')
+const input_mes = document.querySelector('#form_mes')
+const input_ano = document.querySelector('#form_ano')
+
 export function verificaCheckBox() {
     
-    document.getElementById('form_data_atual').addEventListener('click', function() {
-        
-        const checkbox = document.getElementById('form_data_atual');
+    checkbox.addEventListener('click', function() {
         const estaMarcado = checkbox.checked
         
-        const input_dia = document.getElementById('form_dia')
-        const input_mes = document.getElementById('form_mes')
-        const input_ano = document.getElementById('form_ano')
-
-        if (estaMarcado == true) {
-
-            input_dia.value = data.dia;
-            input_mes.value = data.mes;
-            input_ano.value = data.ano;
-
-        } else {
-
-            input_dia.value = null;
-            input_mes.value = null;
-            input_ano.value = null;
-
-        }
+        input_dia.value = estaMarcado ? data.dia : '';
+        input_mes.value = estaMarcado ? data.mes : '';
+        input_ano.value = estaMarcado ? data.ano : '';
     });
+};
+
+function verificaAlteracao() {
+    const alterou = input_dia.value != data.dia ||
+                    input_mes.value != data.mes ||
+                    input_ano.value != data.ano;
+
+    alterou ? checkbox.checked = false : checkbox.checked = true
 }
+
+[input_dia, input_mes, input_ano].forEach(input => {
+    input.addEventListener('input', verificaAlteracao);
+});

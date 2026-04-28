@@ -1,5 +1,4 @@
 export function pegaAtributos() {
-
     const url = document.querySelector('#input_url').value;
     
     const form = document.querySelector('#form');

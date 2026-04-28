@@ -1,19 +1,20 @@
 import { criaLabel, criaInput, criaSelect, criaOption, criaDiv } from './criaElementos.js';
 import { excluiElementos } from './excluiElementos.js';
-import { pegaAtributos } from '../atributos/pegaAtributos.js';
+import { estado } from '../funcoes/estado.js';
 
 export function adicionaElementos() {
-
+    const botao = document.querySelector('#button_add_parametros');
+    const limite = 5;
     let contador = 0;
+    let isFirstClick = true;
     
-    document.querySelector('#button_add_parametros').addEventListener('click', function() {
-        
+    botao.addEventListener('click', function() {
         contador ++;
-        
-        const container = criaDiv();
+        estado.aux ++;
 
         const formulario = document.querySelector('#form');
-        const botao = document.querySelector('#button_add_parametros');
+        
+        const container = criaDiv();
 
         const novoLabel = criaLabel();
         const novoInputNome = criaInput();
@@ -25,16 +26,21 @@ export function adicionaElementos() {
 
         const novoInputExcluir = criaInput();
 
-        Object.assign(novoLabel, {
-            htmlFor:  `form_label_${contador}`,
-            textContent: 'Parâmetros customizados'
-        });
+        if (isFirstClick) {
+
+            Object.assign(novoLabel, {
+                htmlFor:  `form_label_${contador}`,
+                textContent: 'Parâmetros customizados'
+            });
+
+            isFirstClick = false;
+        };
 
         Object.assign(novoInputNome, {
             type: 'text',
             id: `form_id_${contador}`,
             name: `id_${contador}`,
-            placeholder: `id_${contador}`
+            placeholder: 'nome (ex.: pagina)'
         });
 
         Object.assign(novoInputValor, {
@@ -42,7 +48,7 @@ export function adicionaElementos() {
             id: `form_valor_${contador}`,
             name: `valor_${contador}`,
             min: 1,
-            placeholder: `valor_${contador}`
+            placeholder: 'valor'
         });
 
         Object.assign(novoSelect, {
@@ -68,6 +74,10 @@ export function adicionaElementos() {
             value: 'Icon Lixeira'
         });
 
+        novoInputExcluir.addEventListener('click', function() {
+            estado.aux --;
+            botao.disabled = false;
+        });
         excluiElementos(novoInputExcluir, container);
 
         container.appendChild(novoLabel);
@@ -81,6 +91,7 @@ export function adicionaElementos() {
         container.appendChild(novoInputExcluir);
 
         formulario.insertBefore(container, botao);
-    });
 
+        estado.aux == limite ? botao.disabled = true : botao.disabled = false
+    });
 }
