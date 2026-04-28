@@ -1,53 +1,37 @@
 import { pegaAtributos } from './atributos/pegaAtributos.js';
-import { transformaURL } from './funcoes/transformaUrl.js';
-import { promptNavegador } from './funcoes/promptNavegador.js'
+import { promptNavegador } from './funcoes/promptNavegador.js';
 import { delay } from './funcoes/delay.js';
+import { gerarUrls } from './funcoes/gerarURLs.js';
 
-const navegador = promptNavegador();
 const botao = document.querySelector('#button_abrir_abas');
 
 export async function programa() {
-    
-    botao.addEventListener('click', async function() {
-        botao.disabled = true;
+
+    botao.addEventListener('click', async function () {
 
         const dados = pegaAtributos();
-        const url = dados.url;
-        const qtde_abas = dados.qtde_abas;
+        const navegador = promptNavegador(dados.navegador);
+        const urls = gerarUrls(dados);
 
-        if (!url.startsWith('http')) return;
+        if (!urls[0].startsWith('http')) return;
 
-        for (let i = 1; i <= qtde_abas; i++) {
+        try {
+            await window.sistema.iniciarSessao(navegador);
+        } catch (erro) {
+            alert('Navegador não encontrado.');
+            console.error(erro);
+            return;
+        }
+        
+        botao.disabled = true;
+        await delay(1000);
 
-            if (dados.direcao_data == 'sobe') {
-                
-                if (dados.direcao_id == 'sobe') {
-
-                    
-
-                } else {
-
-
-
-                }
-
-            } else {
-
-            }
- 
-            
-            window.sistema.abrirAba(navegador, url);
-
-            dia
-            id
-
-
+        for (let i = 0; i < urls.length; i++) {
+            console.log(urls)
+            console.log(`Aba ${i + 1}: ${urls[i]}`); // Validação
+            await window.sistema.abrirAba(navegador, urls[i]);
             await delay(2000);
-
-        };
-
-        console.log(qtde_abas)
-        console.log(transformaURL(url, dados))
+        }
 
         botao.disabled = false;
     });
