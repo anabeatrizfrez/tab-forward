@@ -1,0 +1,44 @@
+@import url('../base/variables.css');
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-field, .container {
+    background-color: var(--background-secondary-color);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field__label {
+    color: var(--font-primary-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__p {
+    color: var(--font-primary-color);
+}
+
+
+.container__form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 50px);
+}
+
+.container__label {
+    color: var(--font-secondary-color);
+}
+
+.container__checkbox-field {
+    
+}
