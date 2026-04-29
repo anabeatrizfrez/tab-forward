@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,95 +11,101 @@
 
     <header>
 
-        <h1>Tab Forward</h1>
-        <h2>Abra múltiplas abas com parâmetros dinâmicos</h2>
-        <p>Configure um template de URL, defina os parâmetros e abra várias abas de uma vez.</p>
+        <h1 class="header__titulo">Tab Forward</h1>
+        <h2 class="header__objetivo">Abra múltiplas abas com parâmetros dinâmicos</h2>
+        <p class="header__resumo">Configure um template de URL, defina os parâmetros e abra várias abas de uma vez.</p>
 
     </header>
     
     <main>
 
-        <div>
-
-            <label for="input_url">Template da URL</label>
-            <input type="text" id="input_url" name="url" placeholder="URL" required>
-            
+        <div class="form-field">
+            <label class="form-field__label" for="input_url">Template da URL</label>
+            <input class="form-field__input" type="text" id="input_url" name="url" placeholder="URL" required>
         </div>
 
-        <div>
+        <div class="container">
 
-            <p>Parâmetros:</p>
+            <p class="container__p">Parâmetros:</p>
 
-            <form id="form">
+            <form class="container__form" id="form">
 
-                <label for="form_data_atual">Pegar data atual?</label>
-                <input type="checkbox" name="data_atual" id="form_data_atual" value="true">
+                <div class="container__checkbox-field">
+                    <label class="container__label" for="form_data_atual">Pegar data atual?</label>
+                    <input class="container__input--checkbox" type="checkbox" id="form_data_atual" name="data_atual" value="true">
+                </div>
 
-                <!-- QUEBRA DE LINHA --> <br>
-
-                <label for="form_dia">Dia</label>
-                <input type="number" id="form_dia" name="dia" min="1" max="31">
+                <div class="container__day-field">
+                    <label class="container__label" for="form_dia">Dia</label>
+                    <input class="container__input--number" type="number" id="form_dia" name="dia" min="1" max="31">
+                </div>
                 
-                <label for="form_mes">Mês</label>
-                <input type="number" id="form_mes" name="mes" min="1" max="12">
+                <div class="container__month-field">
+                    <label class="container__label" for="form_mes">Mês</label>
+                    <input class="container__input--number" type="number" id="form_mes" name="mes" min="1" max="12">
+                </div>
 
-                <label for="form_ano">Ano</label>
-                <input type="number" id="form_ano" name="ano" min="1500" max="2200">
+                <div class="container__year-field">
+                    <label class="container__label" for="form_ano">Ano</label>
+                    <input class="container__input--number" type="number" id="form_ano" name="ano" min="1500" max="2200">
+                </div>
 
-                <!-- QUEBRA DE LINHA --> <br>
+                <div class="container__direction-date-field">
+                    <label class="container__label" for="form_direcao_data">Direção</label>
+                    <select class="container__select" id="form_direcao_data" name="direcao_data" required>
+                        <option class="container__option" value="sobe">Subindo (próximos dias)</option>  <!--Adicionar setas subindo e descendo-->
+                        <option class="container__option" value="desce">Descendo (dias anteriores)</option>
+                    </select>
+                </div>
 
-                <label for="form_direcao_data">Direção</label>
-                <select id="form_direcao_data" name="direcao_data" required>
-                    <option value="sobe">Subindo (próximos dias)</option>  <!--Adicionar setas subindo e descendo-->
-                    <option value="desce">Descendo (dias anteriores)</option>
-                </select>
+                <div class="container__step-date-field">
+                    <label class="container__label" for="form_passo_data">Pular de quantos em quantos dias</label>
+                    <input class="container__input--number" type="number" id="form_passo_data" name="passo_data" value="1" min="1">
+                </div>
 
-                <label for="form_passo_data">Pular de quantos em quantos dias</label>
-                <input type="number" id="form_passo_data" name="passo_data" value="1" min="1">
+                <div class="container__id-field">
+                    <label class="container__label" for="form_id">ID</label>
+                    <input class="container__input--number" type="number" id="form_id" name="id" >
+                </div>
 
+                <div class="container__direction-id-field">
+                    <label class="container__label" for="form_direcao_id">Direção</label>
+                    <select class="container__select" id="form_direcao_id" name="direcao_id">
+                        <option class="container__option" value="sobe">Subindo (próximos ids)</option>  <!--Adicionar setas subindo e descendo-->
+                        <option class="container__option" value="desce">Descendo (ids anteriores)</option>
+                    </select>
+                </div>
 
-                <hr> <!-- QUEBRA DE LINHA --> <br>
-
-                <label for="form_id">ID</label>
-                <input type="number" id="form_id" name="id" >
-
-                <label for="form_direcao_id">Direção</label>
-                <select id="form_direcao_id" name="direcao_id">
-                    <option value="sobe">Subindo (próximos ids)</option>  <!--Adicionar setas subindo e descendo-->
-                    <option value="desce">Descendo (ids anteriores)</option>
-                </select>
-
-                <!-- QUEBRA DE LINHA --> <br>
-
-                <label for="form_passo_id">Pular de quantos em quantos ids</label>
-                <input type="number" id="form_passo_id" name="passo_id" value="1" min="1">
+                <div class="container__step-id-field">
+                    <label class="container__label" for="form_passo_id">Pular de quantos em quantos ids</label>
+                    <input class="container__input--number" type="number" id="form_passo_id" name="passo_id" value="1" min="1">
+                </div>
                 
-                <label for="form_qtde_abas">Quantidade de abas</label>
-                <input type="number" id="form_qtde_abas" name="qtde_abas" value="1" min="1" max="30" required>
-                
-                <!-- QUEBRA DE LINHA --> <br>
+                <div class="container__amount-tabs-field">
+                    <label class="container__label" for="form_qtde_abas">Quantidade de abas</label>
+                    <input class="container__input--number" type="number" id="form_qtde_abas" name="qtde_abas" value="1" min="1" max="30" required>
+                </div>
 
-                <button type="button" id="button_add_parametros">Adicionar Parâmetro</button>
+                <button class="container__button" type="button" id="button_add_parametros">Adicionar Parâmetro</button>
             </form>
             
-            <div class="acoes">
-                <button type="reset" id="button_limpar">Limpar</button>
-                <button id="button_pre_visualizar" class="capturar">Pré-visualizar URLs</button>
-                <button id="button_abrir_abas" class="capturar">Abrir abas</button>
+            <div class="container__acoes">
+                <button class="container__button--reset" type="reset" id="button_limpar">Limpar</button>
+                <button class="container__button capturar" id="button_pre_visualizar">Pré-visualizar URLs</button>
+                <button class="container__button capturar" id="button_abrir_abas">Abrir abas</button>
             </div>
 
-            <label for="select_navegador">Escolha o navegador:</label> <!--Colocar que precisa estar instalado na maquina-->
-                <select id="select_navegador" name="navegador">
-                    <option value="chrome">Chrome</option>
-                    <option value="edge">Edge</option>
-                    <option value="firefox">Firefox</option>
-                    <option value="opera">Opera</option>
+            <label class="container__label" for="select_navegador">Escolha o navegador:</label> <!--Colocar que precisa estar instalado na maquina-->
+                <select class="container__select" id="select_navegador" name="navegador">
+                    <option class="container__option" value="chrome">Chrome</option>
+                    <option class="container__option" value="edge">Edge</option>
+                    <option class="container__option" value="firefox">Firefox</option>
+                    <option class="container__option" value="opera">Opera</option>
             </select>
 
-            <div id="resultado_urls"></div>
+            <div class="container__exibir-urls" id="resultado_urls"></div>
 
         </div>
-
     </main>
 
     <script type="module" src="../js/index.js"></script>
