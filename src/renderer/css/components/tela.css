@@ -1,0 +1,23 @@
+@import url('../base/variables.css');
+
+body {
+    background-color: var(--background-primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 10%;
+    height: 100vh; 
+}
+
+.header__titulo {
+    color: var(--accent-color);
+}
+
+.header__objetivo {
+    color: var(--font-primary-color);
+}
+
+.header__resumo {
+    color: var(--font-secondary-color);
+}
