@@ -7,20 +7,22 @@ const input_mes = document.querySelector('#form_mes')
 const input_ano = document.querySelector('#form_ano')
 
 export function verificaCheckBox() {
-    
+
     checkbox.addEventListener('click', function() {
         const estaMarcado = checkbox.checked
-        
-        input_dia.value = estaMarcado ? data.dia : '';
-        input_mes.value = estaMarcado ? data.mes : '';
-        input_ano.value = estaMarcado ? data.ano : '';
+
+        if (estaMarcado) {
+            input_dia.value = data.dia;
+            input_mes.value = data.mes;
+            input_ano.value = data.ano;
+        }
     });
 };
 
 function verificaAlteracao() {
     const alterou = input_dia.value != data.dia ||
-                    input_mes.value != data.mes ||
-                    input_ano.value != data.ano;
+        input_mes.value != data.mes ||
+        input_ano.value != data.ano;
 
     alterou ? checkbox.checked = false : checkbox.checked = true
 }

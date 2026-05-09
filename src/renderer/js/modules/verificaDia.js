@@ -1,6 +1,4 @@
-function diasNoMes(mes, ano) {
-    return new Date(ano, mes, 0).getDate();
-}
+import { diasNoMes } from '../utils/diasNoMes.js'
 
 export function verificaDia(baseDia, baseMes, baseAno, direcao, iteracao, passo) {
     let dia = baseDia;
