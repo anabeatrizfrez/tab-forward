@@ -4,5 +4,8 @@
     --font-primary-color: #FFF;
     --font-secondary-color: #6E7A8D;
     --font-tertiary-color: #C8D1DA;
-    --accent-color: #942cc8;
+    --accent-primary-color: #3445a3;
+    --accent-secondary-color: #232e6d;
+    --border-color: #6e7a8d2b;
+    --button-delete-color: #9d1313;
 }
