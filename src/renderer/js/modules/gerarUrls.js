@@ -1,9 +1,8 @@
 import { estado } from './estado.js';
 import { verificaDia } from './verificaDia.js';
 import { transformaUrl } from '../utils/transformaUrl.js';
-
 function calculaValor(base, direcao, iteracao, passo = 1) {
-    (direcao === 'sobe') ? base += (iteracao * passo) : base -= (iteracao * passo);
+    (direcao === 'sobe') ? base += (iteracao * passo): base -= (iteracao * passo);
     return base;
 }
 
@@ -23,8 +22,8 @@ export function gerarUrls(dados) {
     const paramsCustom = [];
 
     for (let i = 1; i <= estado.aux; i++) {
-        const nomeEl    = document.querySelector(`#form_id_${i}`);
-        const valorEl   = document.querySelector(`#form_valor_${i}`);
+        const nomeEl = document.querySelector(`#form_id_${i}`);
+        const valorEl = document.querySelector(`#form_valor_${i}`);
         const direcaoEl = document.querySelector(`#form_direcao_${i}`);
 
         if (!nomeEl?.value) continue;
@@ -52,7 +51,7 @@ export function gerarUrls(dados) {
             dia: dataCalculada.dia,
             mes: dataCalculada.mes,
             ano: dataCalculada.ano,
-            id:  calculaValor(base_id, direcao_id, i, passo_id),
+            id: calculaValor(base_id, direcao_id, i, passo_id),
         };
 
         for (const p of paramsCustom) {
