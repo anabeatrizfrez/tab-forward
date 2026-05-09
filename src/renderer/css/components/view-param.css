@@ -1,0 +1,30 @@
+@import url('../base/variables.css'); 
+
+.exibir-urls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.exibir-urls__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: decimal;
+    list-style-position: inside;
+    color: var(--font-secondary-color);
+}
+
+.exibir-urls__item {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: .8rem;
+    background-color: var(--border-color);
+}
+
+/* Elements */
+
+.exibir-urls__item::marker {
+    color: var(--accent-primary-color);
+}
