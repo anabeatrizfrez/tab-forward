@@ -1,0 +1,40 @@
+@import url('../base/variables.css');
+
+.container-add-param {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.container-new-param {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-add-param__params {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container-add-param__span {
+    font-size: 14px;
+    color: var( --font-secondary-color);
+}
+
+.container-add-param__select {
+    width: calc(100% / 4);
+}
+
+/* Elements */
+
+.container-add-param__input::after {
+    content: '=';
+    display: inline-block;
+    margin-right: 3px;
+    vertical-align: bottom;
+}
