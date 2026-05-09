@@ -1,0 +1,87 @@
+@import url('../base/variables.css');
+
+.acoes {
+    display: flex;
+    gap: 12px;
+}
+
+.button {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.acoes__button--add {
+    padding: 8px 16px;
+    border: 0.5px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--font-primary-color);
+    background-color: var(--background-primary-color);
+}
+
+.acoes__button--view {
+    border: 0.5px solid var(--border-color);
+    color: var(--font-primary-color);
+    background-color: var(--border-color);
+}
+
+.acoes__button--exec {
+    border: 0.5px solid var(--border-color);
+    font-weight: 600;
+    color: var(--background-primary-color);
+    background-color: var(--accent-primary-color);
+}
+
+.acoes__button--reset.button {
+    width: 40px;
+    padding: 4px;
+    border: 0.5px solid var(--border-color);
+    font-size: 24px;
+    color: var(--font-primary-color);
+    background-color: var(--background-primary-color);
+}
+
+.container-add-param__button--remv {
+    width: 32px;
+    padding: 4px;
+    border: none;
+    font-size: 18px;
+    font-family: 'Material Symbols Outlined';
+    color: var(--font-secondary-color);
+    background-color: transparent;
+}
+
+/* Classes */
+
+.acoes__button--add:hover {
+    border-color: var(--accent-primary-color);
+    background-color: var(--accent-primary-color);
+    box-shadow: 0 0 10px var(--border-color);
+}
+
+.acoes__button--view:hover {
+    background-color: var(--background-secondary-color);
+}
+
+.acoes__button--exec:hover,
+.acoes__button--reset.button:hover {
+    background-color: var(--accent-secondary-color);
+}
+
+.container-add-param__button--remv:hover {
+    border-radius: 8px;
+    color: var(--button-delete-color);
+    background-color: var(--accent-primary-color);
+}
+
+/* Elements */
+
+.acoes__button--add::before {
+    content: 'add';
+    display: inline-block;
+    margin-right: 3px;
+    font-family: 'Material Symbols Outlined';
+    vertical-align: bottom;
+}
