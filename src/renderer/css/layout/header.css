@@ -1,0 +1,40 @@
+@import url('../base/variables.css');
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.header__titulo {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--accent-primary-color);
+}
+
+.header__objetivo {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--font-primary-color);
+}
+
+.header__resumo {
+    max-width: 520px;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--font-secondary-color);
+}
+
+/* Elements */
+
+.header__titulo::before {
+    content: 'tab_group';
+    display: inline-block;
+    margin-right: 5px;
+    font-family: 'Material Symbols Outlined';
+    font-size: 24px;
+    vertical-align: middle;
+    color: var(--accent-primary-color);
+}
