@@ -1,4 +1,12 @@
 @import url('./base/reset.css');
-@import url('./components/tela.css');
-@import url('./components/formulario.css');
-@import url('./components/botoes.css');
+@import url('./base/global.css');
+@import url('./base/fonts.css');
+@import url('./layout/header.css');
+@import url('./layout/main.css');
+@import url('./layout/grid.css');
+@import url('./components/buttons.css');
+@import url('./components/checkbox.css');
+@import url('./components/info.css');
+@import url('./components/new-param.css');
+@import url('./components/selects.css');
+@import url('./components/view-param.css');
