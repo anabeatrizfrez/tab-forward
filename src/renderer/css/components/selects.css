@@ -1,0 +1,68 @@
+@import url('../base/variables.css');
+
+.container__select {
+	display: flex;
+	font-size: 0.8rem;
+}
+
+.container__option {
+	padding-block: 6px;
+	border-radius: 6px;
+    color: var(--font-primary-color);
+	transition: background-color 0.2s;
+}
+
+/* Classes */
+
+.container__option:hover {
+    background-color: var(--accent-primary-color);
+}
+
+/* Elements */
+
+.select--list,
+::picker(select) {
+    appearance: base-select;
+}
+
+::picker(select) {
+    position-try-fallbacks: none;
+    margin-top: 8px;
+    padding: 8px 4px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-secondary-color);
+}
+
+.up::before {
+    content: 'north';
+    display: inline-block;
+    margin-right: 3px;
+	font-family: 'Material Symbols Outlined';
+    vertical-align: bottom;
+}
+
+.down::before {
+    content: 'south';
+    display: inline-block;
+    margin-right: 3px;
+	font-family: 'Material Symbols Outlined';
+    vertical-align: bottom;
+}
+
+.container__select::picker-icon {
+    content: "keyboard_arrow_down";
+    font-family: 'Material Symbols Outlined';
+    font-size: 16px;
+    color: var(--font-secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.container__select:open::picker-icon {
+    transform: rotate(180deg);
+}
+
+.container__option::checkmark {
+    content: 'check';
+    font-family: 'Material Symbols Outlined';
+}
