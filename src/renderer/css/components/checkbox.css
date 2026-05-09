@@ -1,0 +1,31 @@
+@import url('../base/variables.css');
+
+.container__checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 24px;
+}
+
+.container__input--checkbox {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    border: 1px solid var(--accent-primary-color);
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--background-primary-color);
+}
+
+/* Elements */
+
+.container__input--checkbox:checked::after {
+    content: 'check_small';
+    display: block;
+    border-radius: 50%;
+    font-family: 'Material Symbols Outlined';
+    font-size: 14px;
+    color: var(--background-primary-color);
+    background-color: var(--accent-primary-color);
+}
